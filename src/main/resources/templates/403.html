@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <!-- Include header CSS from fragments -->
+    <div th:replace="/fragments/header :: header-css"/>
+</head>
+<body>
+
+<!-- Include header from fragments -->
+<div th:replace="/fragments/header :: header"></div>
+
+<main class="container">
+    <section class="starter-template">
+        <h1>403 - Access Denied</h1>
+        <p th:inline="text">
+            Hello, [[${#httpServletRequest.remoteUser}]], you do not have permission to access this page.
+        </p>
+    </section>
+</main>
+
+<!-- Include footer from fragments -->
+<div th:replace="/fragments/footer :: footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${user.name} + '\'s Blog'">User's Blog</title>
+    <div th:replace="/fragments/header :: header-css"></div>
+</head>
+<body>
+
+<!-- Include header from fragments -->
+<div th:replace="/fragments/header :: header"></div>
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h1 th:text="${user.name} + '\'s Blog'">Username's Blog</h1>
+    </div>
+
+    <div style="margin-top: 20px;"></div>
+
+    <!-- Include posts -->
+    <div th:replace="/fragments/posts :: posts"></div>
+
+    <!-- Include pagination -->
+    <div th:replace="/fragments/pagination :: pagination(URLparameter='/blog/' + ${user.username})"></div>
+
+</div>
+<!-- /.container -->
+
+<!-- Include footer from fragments -->
+<div th:replace="/fragments/footer :: footer"></div>
+
+</body>
+</html>
+
+
+{% comment %} <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/fragments/header :: header-css"/>
+</head>
+<body>
+
+<div th:replace="/fragments/header :: header"/>
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h1 th:text="${user.name} + '\'s Blog'">Username Blog</h1>
+    </div>
+
+    <br></br>
+    <br></br>
+
+    <div th:replace="/fragments/posts :: posts"/>
+
+    <div th:replace="/fragments/pagination :: pagination(URLparameter='/blog/' + ${user.username})"/>
+
+</div>
+<!-- /.container -->
+
+<div th:replace="/fragments/footer :: footer"/>
+
+</body>
+</html> {% endcomment %}

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error - Spring Boot Thymeleaf + Spring Security</title>
+    <div th:replace="/fragments/header :: header-css"></div>
+</head>
+<body>
+
+<!-- Include header from fragments -->
+<div th:replace="/fragments/header :: header"></div>
+
+<main class="container">
+    <section class="starter-template" style="margin-top:20px; text-align: center;">
+        <h1>Error</h1>
+        <h2 th:text="${errorMessage}">An unexpected error occurred.</h2>
+        <p>Please try again later or contact support.</p>
+        <a th:href="@{/}" class="btn btn-primary">Go to Home</a>
+    </section>
+</main>
+
+<!-- Include footer from fragments -->
+<div th:replace="/fragments/footer :: footer"></div>
+
+</body>
+</html>
+
+
+
+{% comment %} <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/fragments/header :: header-css"/>
+</head>
+<body>
+
+<div th:replace="/fragments/header :: header"/>
+
+<div class="container">
+
+    <h1 th:if="${errorMessage}" th:utext="${errorMessage}">Error java.lang.NullPointerException</h1>
+    <h1 th:if="!${errorMessage}">404 - Page does not exist</h1>
+    <a href="index.html" th:href="@{/home}">Back to Home Page</a>
+
+</div>
+
+<div th:replace="/fragments/footer :: footer"/>
+
+</body>
+</html> {% endcomment %}

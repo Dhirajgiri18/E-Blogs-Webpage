@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home - Spring Boot Thymeleaf + Spring Security</title>
+    <div th:replace="/fragments/header :: header-css"></div>
+</head>
+<body>
+
+<!-- Include header from fragments -->
+<div th:replace="/fragments/header :: header"></div>
+
+<div class="container">
+    <!-- Include posts from fragments -->
+    <div th:replace="/fragments/posts :: posts"></div>
+
+    <!-- Include pagination from fragments -->
+    <div th:replace="/fragments/pagination :: pagination(URLparameter='/home')"></div>
+</div>
+
+<!-- Include footer from fragments -->
+<div th:replace="/fragments/footer :: footer"></div>
+
+</body>
+</html>
+
+
+
+
+{% comment %} <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--<title>Spring Boot Thymeleaf + Spring Security</title>-->
+
+    <div th:replace="/fragments/header :: header-css"/>
+
+</head>
+<body>
+
+<div th:replace="/fragments/header :: header"/>
+
+<div class="container">
+
+    <div th:replace="/fragments/posts :: posts"/>
+
+    <div th:replace="/fragments/pagination :: pagination(URLparameter='/home')"/>
+
+</div>
+
+<div th:replace="/fragments/footer :: footer"/>
+
+</body>
+</html> {% endcomment %}
